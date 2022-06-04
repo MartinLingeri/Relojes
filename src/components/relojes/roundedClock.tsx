@@ -30,7 +30,7 @@ const RoundedClock: FC<Props> = (props: Props) => {
       backgroundImage={roundedClock}
       backgroundColor="gray.200"
       backgroundSize="cover"
-      border="1px solid #1A202C"
+      border={`1px solid ${props.shadow}`}
       borderRadius="50%"
       boxShadow="0 -15px 15px rgba(255,255,255,0.05), inset 0 -15px 15px rgba(255,255,255,0.05), 0 15px 15px rgba(0,0,0,0.3), inset 0 15px 15px rgba(0,0,0,0.3)"
       _before={{

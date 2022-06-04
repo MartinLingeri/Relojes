@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { Stack, Box, Select, useColorMode } from "@chakra-ui/react";
 import RoundedClock from "./components/relojes/roundedClock";
-import RadiolandClock from "./components/relojes/radiolandClock";
-import XNineSegmentsClock from "./components/relojes/xNineSegmentsClock";
-import FourSegmentsClock from "./components/relojes/fourSegmentsClock";
+import LcdClock from "./components/relojes/lcdClock";
 
 import relojes from "./relojes";
 import bgColors from "./bgColors";
@@ -121,20 +119,36 @@ function App() {
       </Stack>
       <Box p="auto">
         {clock === "RoundedClock" && (
-          <RoundedClock date={date} name={bgColorName} shadow={bgShadow} />
+          <RoundedClock
+            date={date}
+            font=""
+            name={bgColorName}
+            shadow={bgShadow}
+          />
         )}
         {clock === "RadiolandClock" && (
-          <RadiolandClock date={date} name={bgColorName} shadow={bgShadow} />
+          <LcdClock
+            date={date}
+            font="radioland"
+            name={bgColorName}
+            shadow={bgShadow}
+          />
         )}
         {clock === "XNineSegmentsClock" && (
-          <XNineSegmentsClock
+          <LcdClock
             date={date}
+            font="xNineSegments"
             name={bgColorName}
             shadow={bgShadow}
           />
         )}
         {clock === "FourSegmentsClock" && (
-          <FourSegmentsClock date={date} name={bgColorName} shadow={bgShadow} />
+          <LcdClock
+            date={date}
+            font="fourSegments"
+            name={bgColorName}
+            shadow={bgShadow}
+          />
         )}
       </Box>
     </Stack>

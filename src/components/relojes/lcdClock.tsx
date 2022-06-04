@@ -3,9 +3,9 @@ import { Box } from "@chakra-ui/react";
 
 import Props from "./clockProps";
 
-const FourSegmentsClock: FC<Props> = (props: Props) => {
+const LcdClock: FC<Props> = (props: Props) => {
   return (
-    <Box fontFamily="fourSegments" fontSize={{ base: 54, md: 64 }}>
+    <Box fontFamily={props.font} fontSize={{ base: 54, md: 68 }}>
       {props.name === "Transparent" ? (
         <Box color="blackAlpha.800" textShadow={`2px 2px 2px ${props.shadow}`}>
           {props.date.toLocaleTimeString()}
@@ -24,4 +24,4 @@ const FourSegmentsClock: FC<Props> = (props: Props) => {
   );
 };
 
-export default FourSegmentsClock;
+export default LcdClock;
