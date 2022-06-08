@@ -24,13 +24,11 @@ interface SyntheticEvent {
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   const [date, setDate] = useState<Date>(() => new Date());
-  const [clock, setClock] = useState<string>(relojes[0].component);
+  const [clock, setClock] = useState<number>(relojes[0].id);
   const [bgColor, setBgColor] = useState<string>(bgColors[0].color);
   const [bgColorName, setBgColorName] = useState<string>(bgColors[0].name);
   const [bgShadow, setBgShadow] = useState<string>(bgColors[0].shadow);
   const [optionColor, setOptionColor] = useState<string>("");
-
-  const componente = "XNineSegment";
 
   function tick() {
     setDate(new Date());
@@ -50,7 +48,7 @@ function App() {
 
   function handleSelectedClockOption(e: SyntheticEvent) {
     const target = e.target as HTMLTextAreaElement;
-    setClock(target.value);
+    setClock(parseInt(target.value));
   }
 
   function handleSelectedBgColorOption(e: SyntheticEvent) {
@@ -87,7 +85,7 @@ function App() {
             return (
               <option
                 key={r.name}
-                value={r.component}
+                value={r.id}
                 style={{ color: `${optionColor}` }}
               >
                 {r.name}
@@ -118,7 +116,7 @@ function App() {
         </Select>
       </Stack>
       <Box p="auto">
-        {clock === "RoundedClock" && (
+        {clock === 1 && (
           <RoundedClock
             date={date}
             font=""
@@ -126,7 +124,7 @@ function App() {
             shadow={bgShadow}
           />
         )}
-        {clock === "RadiolandClock" && (
+        {clock === 2 && (
           <LcdClock
             date={date}
             font="radioland"
@@ -134,7 +132,7 @@ function App() {
             shadow={bgShadow}
           />
         )}
-        {clock === "XNineSegmentsClock" && (
+        {clock === 3 && (
           <LcdClock
             date={date}
             font="xNineSegments"
@@ -142,10 +140,18 @@ function App() {
             shadow={bgShadow}
           />
         )}
-        {clock === "FourSegmentsClock" && (
+        {clock === 4 && (
           <LcdClock
             date={date}
             font="fourSegments"
+            name={bgColorName}
+            shadow={bgShadow}
+          />
+        )}
+        {clock === 5 && (
+          <LcdClock
+            date={date}
+            font=""
             name={bgColorName}
             shadow={bgShadow}
           />

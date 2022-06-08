@@ -1,8 +1,9 @@
 const relojes = [
-  { name: "Rounded Clock", component: "RoundedClock" },
-  { name: "Radioland Clock", component: "RadiolandClock" },
-  { name: "X Nine Segments Clock", component: "XNineSegmentsClock" },
-  { name: "Four Segments Clock", component: "FourSegmentsClock" },
+  { id: 1, name: "Rounded Clock" },
+  { id: 2, name: "Radioland Clock" },
+  { id: 3, name: "X Nine Segments Clock" },
+  { id: 4, name: "Four Segments Clock" },
+  { id: 5, name: "LCD Custom" },
 ];
 
 export default relojes;

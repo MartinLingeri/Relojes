@@ -24,6 +24,7 @@ const Fonts = () => (
         font-weight: 700;
         src: local('four-segments'), url('./src/fonts/four-segments.ttf');
       }
+      
       `}
   />
 );
