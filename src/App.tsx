@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Stack, Box, Select, useColorMode } from "@chakra-ui/react";
 import RoundedClock from "./components/relojes/roundedClock";
+import FlipClock from "./components/relojes/flipClock";
 import LcdClock from "./components/relojes/lcdClock";
 
 import relojes from "./relojes";
@@ -55,10 +56,10 @@ function App() {
     const target = e.target as HTMLTextAreaElement;
     setBgColorName(target.value);
     setBgColor(
-      bgColors.find((c) => c.name === target.value)?.color || "gray.800"
+      bgColors.find((c) => c.name === target.value)?.color || "#1A202C"
     );
     setBgShadow(
-      bgColors.find((c) => c.name === target.value)?.shadow || "blackAlpha.900"
+      bgColors.find((c) => c.name === target.value)?.shadow || "#000000eb"
     );
   }
 
@@ -78,6 +79,7 @@ function App() {
           borderColor="gray.300"
           bg="gray.300"
           color="gray.700"
+          boxShadow={`2px 2px 2px ${bgShadow}`}
           value={clock}
           onChange={handleSelectedClockOption}
         >
@@ -99,6 +101,7 @@ function App() {
           borderColor="gray.300"
           bg="gray.300"
           color="gray.700"
+          boxShadow={`2px 2px 2px ${bgShadow}`}
           value={bgColorName}
           onChange={handleSelectedBgColorOption}
         >
@@ -115,19 +118,17 @@ function App() {
           })}
         </Select>
       </Stack>
-      <Box p="auto">
+      <Box>
         {clock === 1 && (
           <RoundedClock
             date={date}
-            font=""
             name={bgColorName}
             shadow={bgShadow}
           />
         )}
         {clock === 2 && (
-          <LcdClock
+          <FlipClock
             date={date}
-            font="radioland"
             name={bgColorName}
             shadow={bgShadow}
           />
@@ -135,7 +136,7 @@ function App() {
         {clock === 3 && (
           <LcdClock
             date={date}
-            font="xNineSegments"
+            font="radioland"
             name={bgColorName}
             shadow={bgShadow}
           />
@@ -143,7 +144,7 @@ function App() {
         {clock === 4 && (
           <LcdClock
             date={date}
-            font="fourSegments"
+            font="xNineSegments"
             name={bgColorName}
             shadow={bgShadow}
           />
@@ -151,7 +152,14 @@ function App() {
         {clock === 5 && (
           <LcdClock
             date={date}
-            font=""
+            font="fourSegments"
+            name={bgColorName}
+            shadow={bgShadow}
+          />
+        )}
+        {clock === 6 && (
+          <LcdClock
+            date={date}
             name={bgColorName}
             shadow={bgShadow}
           />

@@ -1,14 +1,9 @@
 import { FC, useEffect, useState } from "react";
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Stack, keyframes } from "@chakra-ui/react";
 import roundedClock from "../../images/roundedClock.png";
 
+import Clock from "./clock";
 import Props from "./clockProps";
-
-interface Clock {
-  hh: number;
-  mm: number;
-  ss: number;
-}
 
 const RoundedClock: FC<Props> = (props: Props) => {
   const [clock, setClock] = useState<Clock>({ hh: 0, mm: 0, ss: 0 });
