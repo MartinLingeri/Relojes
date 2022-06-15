@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Box, Stack, keyframes } from "@chakra-ui/react";
-import roundedClock from "../../images/roundedClock.png";
+import roundedClock from "/images/roundedClock.png";
 
 import Clock from "./clock";
 import Props from "./clockProps";
