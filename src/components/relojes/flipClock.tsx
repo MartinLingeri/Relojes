@@ -72,7 +72,7 @@ function AnimatedCard(props: { animation: string; digit: any }) {
         <StackFold
           animation={`${fold} 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards`}
         >
-          <chakra.span fontSize="5em" transform="translateY(50%)" color="white">
+          <chakra.span fontSize={{base:"3em",sm:"5em"}} transform="translateY(50%)" color="white">
             {props.digit}
           </chakra.span>
         </StackFold>
@@ -81,7 +81,7 @@ function AnimatedCard(props: { animation: string; digit: any }) {
           animation={`${unfold} 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards`}
         >
           <chakra.span
-            fontSize="5em"
+            fontSize={{base:"3em",sm:"5em"}}
             transform="translateY(-50%)"
             color="white"
           >
@@ -114,7 +114,7 @@ function StaticCard(props: { position: string; digit: any }) {
         borderTopLeftRadius="3px"
         borderTopRightRadius="3px"
       >
-        <chakra.span fontSize="5em" transform="translateY(50%)" color="white">
+        <chakra.span fontSize={{base:"3em",sm:"5em"}} transform="translateY(50%)" color="white">
           {props.digit}
         </chakra.span>
       </Card>
@@ -127,7 +127,7 @@ function StaticCard(props: { position: string; digit: any }) {
         borderBottomLeftRadius="3px"
         borderBottomRightRadius="3px"
       >
-        <chakra.span fontSize="5em" transform="translateY(-50%)" color="white">
+        <chakra.span fontSize={{base:"3em",sm:"5em"}} transform="translateY(-50%)" color="white">
           {props.digit}
         </chakra.span>
       </Card>
@@ -139,8 +139,6 @@ const FlipContainer = chakra(Box, {
   baseStyle: {
     display: "block",
     position: "relative",
-    width: "140px",
-    height: "120px",
     perspectiveOrigin: "50% 50%",
     perspective: "300px",
     backgroundColor: "#171923",
@@ -177,7 +175,7 @@ function FlipUnitContainer(props: {
   const animation2 = !props.shuffle ? "fold" : "unfold";
 
   return (
-    <FlipContainer boxShadow={`0px 10px 10px 1px ${props.shadow}`}>
+    <FlipContainer width={{base:"100px", sm:"140px"}} height={{base:"80px", sm:"120px"}} boxShadow={`0px 10px 10px 1px ${props.shadow}`}>
       <StaticCard position={"upperCard"} digit={currentDigit} />
       <StaticCard position={"lowerCard"} digit={previousDigit} />
       <AnimatedCard digit={digit1} animation={animation1} />
@@ -223,7 +221,7 @@ function FlipClock(props: Props) {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
-      width="500px"
+      width={{base:"350px",sm:"500px"}}
       boxSizing="border-box"
     >
       <FlipUnitContainer
