@@ -2,10 +2,11 @@ const express = require("express");
 const app = express();
 const multer = require("multer");
 const cors = require("cors");
+require("dotenv").config();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000","https://customclocks.netlify.app"],
   })
 );
 
@@ -34,9 +35,9 @@ app.post("/uploads", upload.single("customFont"), (req, res) => {
     message: "Added custom font successfully",
     font: {
       fileName: req.file.filename,
-      filePath: `http://localhost:5000/uploads/${req.file.filename}`,
+      filePath: `https://customclocks.herokuapp.com/uploads/${req.file.filename}`,
     },
   });
 });
 
-app.listen(5000, () => console.log("Server started"));
+app.listen(process.env.PORT||5000, () => console.log("Server started"));

@@ -47,7 +47,7 @@ function LcdCustom(props: Props) {
     try {
       setLoading(true);
       const res = await axios
-        .post("http://localhost:5000/uploads", form, {
+        .post("https://customclocks.herokuapp.com/uploads", form, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {
@@ -122,8 +122,8 @@ function LcdCustom(props: Props) {
         )}
         <Box>
           <div {...getRootProps({ style })}>
-            <input {...getInputProps()} />
-            <p>Drop a TTF file here, or click to add one</p>
+            <input {...getInputProps()} accept=".ttf"/>
+            <p>Click to add your font</p>
           </div>
         </Box>
       </Stack>
