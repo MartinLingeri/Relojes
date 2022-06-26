@@ -3,6 +3,7 @@ import { Stack, Box, Select, useColorMode } from "@chakra-ui/react";
 import RoundedClock from "./components/relojes/roundedClock";
 import FlipClock from "./components/relojes/flipClock";
 import LcdClock from "./components/relojes/lcdClock";
+import LcdCustom from "./components/relojes/lcdCustom";
 
 import relojes from "./relojes";
 import bgColors from "./bgColors";
@@ -158,7 +159,7 @@ function App() {
           />
         )}
         {clock === 6 && (
-          <LcdClock
+          <LcdCustom
             date={date}
             name={bgColorName}
             shadow={bgShadow}
