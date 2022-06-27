@@ -4,6 +4,11 @@ Es una pagina hecha con React (con Vite) y Chakra-UI de relojes analogicos y dig
 # Deploy
 [customclocks.netlify.app](https://customclocks.netlify.app)
 
+# Ejemplo
+![agregar fuente personalziada](example_images/example1.png)
+![rounded clock](example_images/example2.png)
+![flip clock](example_images/example3.png)
+
 ## Video de inspiracion de fuentes lcd
 Video de Posy: [youtube](https://www.youtube.com/watch?v=RTB5XhjbgZA&t=699s)
 
