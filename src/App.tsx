@@ -68,7 +68,7 @@ function App() {
     <Stack
       alignItems="center"
       w="100%"
-      h="100vh"
+      minH="100vh"
       paddingTop={16}
       gap={24}
       backgroundColor={bgColor}
